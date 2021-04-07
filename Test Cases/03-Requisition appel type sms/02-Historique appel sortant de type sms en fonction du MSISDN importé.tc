@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>02-Historique appel sortant de type sms en fonction du MSISDN importé</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a0c71c93-0215-4360-9b0c-c8eb22dc3464</testCaseGuid>
+</TestCaseEntity>

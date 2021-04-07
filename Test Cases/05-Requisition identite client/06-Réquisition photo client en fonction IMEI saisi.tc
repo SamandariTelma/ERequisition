@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>06-Réquisition photo client en fonction IMEI saisi</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5c256417-e822-4a73-aef7-d735eae8a6d4</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verification ajout requisition appel sortant de type sms en fonction MSISDN(CT appel)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8237f4bb-e41d-4c8c-8f2e-5e0c37e50977</testCaseGuid>
+</TestCaseEntity>

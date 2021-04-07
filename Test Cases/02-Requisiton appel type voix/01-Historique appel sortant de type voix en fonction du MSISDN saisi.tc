@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>01-Historique appel sortant de type voix en fonction du MSISDN saisi</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3ed9d66b-11c9-4f28-a40f-f4e63f5caaec</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://tapq466lv/requisition/'</initValue>
+      <name>urlPreprod</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'samandari'</initValue>
+      <name>loginUsernameAdmin</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Thas4e@1421'</initValue>
+      <name>loginPassword</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Format avec separateur et sans prefix 034</description>
+      <initValue>' 00 308 16'</initValue>
+      <name>msisdnATraiterA</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>' 41 177 64'</initValue>
+      <name>msisdnATraiterB</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'12345'</initValue>
+      <name>numeroRequisition</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>' 00 308 17'</initValue>
+      <name>msisdnATraiterC</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'863728030148813'</initValue>
+      <name>imeiATraiterA</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'355277091261011'</initValue>
+      <name>imeiATraiterB</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'17625256'</initValue>
+      <name>referenceRequisition</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

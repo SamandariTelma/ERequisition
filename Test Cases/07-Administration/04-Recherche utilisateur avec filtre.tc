@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>04-Recherche utilisateur avec filtre</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b03ac2f1-bd86-4d3d-8b2d-907198997a24</testCaseGuid>
+</TestCaseEntity>

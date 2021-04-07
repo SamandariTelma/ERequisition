@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>03-Historique appel sortant de type sms en fonction de l IMEI saisi</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bccaa191-74bb-48f4-949c-ff414c91664b</testCaseGuid>
+</TestCaseEntity>
