@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>04-Historique d appel sortant de type voix en fonction de l IMEI Importe</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b85ec540-c817-48ad-be24-90af620445cc</testCaseGuid>
+</TestCaseEntity>

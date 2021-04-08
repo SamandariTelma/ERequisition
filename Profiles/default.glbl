@@ -51,6 +51,11 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'355277091261012'</initValue>
+      <name>imeiATraiterC</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'17625256'</initValue>
       <name>referenceRequisition</name>
    </GlobalVariableEntity>

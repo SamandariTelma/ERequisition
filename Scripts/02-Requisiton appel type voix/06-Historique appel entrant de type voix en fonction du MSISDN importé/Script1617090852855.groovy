@@ -169,10 +169,10 @@ WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Popin err/Bouton O
 WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Bouton radio Importer'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'Verifier la presence du champ de telechargement msisdn'
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement csv msisdn'), 0)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 0)
 
 'Telecharger le fichier avec un mauvais format msisdn'
-WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement csv msisdn'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\msisdnRequisition mauvais numero.csv')
+WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\msisdnRequisition mauvais numero.csv')
 
 'Vérifier l apparition du popin avec le message d erreur'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur reverifier numero'), 
@@ -186,7 +186,7 @@ WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Popin 
 WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Popin err/Bouton Ok'))
 
 'Telecharger le fichier avec les bons format msisdn'
-WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement csv msisdn'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\msisdnRequisition.csv')
+WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\msisdnRequisition.csv')
 
 'Vérifier que le numero s affiche avec un icon corbeille'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton de suppression numero A'), 3)

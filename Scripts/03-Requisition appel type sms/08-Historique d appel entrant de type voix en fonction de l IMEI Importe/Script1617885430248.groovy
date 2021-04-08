@@ -60,14 +60,14 @@ WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Type d appel/Popin e
 'Cliquer sur le bouton OK'
 WebUI.click(findTestObject('Nouvelle demande/Type d appel/Popin err/bouton OK'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Cliquer sur le checkbox Voix'
-WebUI.click(findTestObject('Nouvelle demande/Type d appel/Label Voix'), FailureHandling.CONTINUE_ON_FAILURE)
+'Cliquer sur le checkbox SMS'
+WebUI.click(findTestObject('Nouvelle demande/Type d appel/Label SMS'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Vérifier que Voix est coché'
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Type d appel/Checkbox Voix'), 3)
+'Vérifier que Voix n est pas coché'
+WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Type d appel/Checkbox Voix'), 3)
 
-'Vérifier que SMS n est pas coché'
-WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Type d appel/Checkbox SMS'), 3)
+'Vérifier que SMS est coché'
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Type d appel/Checkbox SMS'), 3)
 
 'Cliquer sur le bouton '
 WebUI.click(findTestObject('Bouton commun/bouton suivant'), FailureHandling.CONTINUE_ON_FAILURE)
@@ -100,14 +100,14 @@ WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Type d appel/Popin e
 'Cliquer sur le bouton OK'
 WebUI.click(findTestObject('Nouvelle demande/Type d appel/Popin err/bouton OK'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Cliquer sur le checkbox Appels sortants'
-WebUI.click(findTestObject('Nouvelle demande/Sens d appel/Label Appels sortants'), FailureHandling.CONTINUE_ON_FAILURE)
+'Cliquer sur le checkbox Appels entrants'
+WebUI.click(findTestObject('Nouvelle demande/Sens d appel/Label Appels entrants'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Vérifier que Appels sortants est coché'
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Sens d appel/Checkbox Appels sortants'), 3)
+'Vérifier que Appels sortants n est pas coché'
+WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Sens d appel/Checkbox Appels sortants'), 3)
 
-'Vérifier que Appels entrants n est pas coché'
-WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Sens d appel/Checkbox Appels entrants'), 3)
+'Vérifier que Appels entrants est coché'
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Sens d appel/Checkbox Appels entrants'), 3)
 
 'Cliquer sur le bouton '
 WebUI.click(findTestObject('Bouton commun/bouton suivant'), FailureHandling.CONTINUE_ON_FAILURE)
@@ -141,81 +141,70 @@ WebUI.verifyElementPresent(findTestObject('Bouton commun/bouton precedent'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Bouton commun/bouton suivant'), 3)
 
-'Cliquer sur le bouton icon plus sans avoir renseigner un msisdn'
-WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Bouton d ajout numero (icon plus)'))
-
-'Vérifier l apparition du popin avec message d erreur'
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur ajout numero vide'), 
-    3)
-
-'Cliquer sur le bouton ok du popin'
-WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Popin err/Bouton Ok'))
-
-'Cliquer sur le bouton suivant sans avoir renseigner un msisdn'
-WebUI.click(findTestObject('Bouton commun/bouton suivant'))
-
-'Vérifier l apparition du popin avec message d erreur'
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur champ obli vide'), 
-    3)
-
-'Vérifier la conformité du message d erreur'
-WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur champ obli vide'), 
-    'Veuillez remplir les champs obligatoires et la liste des MSISDN ou IMEI à traiter ! !')
-
-'Clique sur le bouton OK'
-WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Popin err/Bouton Ok'))
-
-'Saisir un msisdn dans le champ de saisi numéro'
+'Choisir l option importer'
 WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Bouton radio Importer'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Verifier la presence du champ de telechargement msisdn'
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 0)
+'Choisir l option IMEI'
+WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Bouton radio IMEI'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Telecharger le fichier avec un mauvais format msisdn'
-WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\msisdnRequisition mauvais numero.csv')
+'Verifier la presence du champ de telechargement imei'
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 3)
+
+'Cliquer sur le bouton suivant en laissant vide le champ imei'
+WebUI.click(findTestObject('Bouton commun/bouton suivant'), FailureHandling.CONTINUE_ON_FAILURE)
+
+'Vérifier l appariton du popin avec un messsage d erreur'
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur champ obli vide'), 
+    3, FailureHandling.STOP_ON_FAILURE)
+
+'Cliquer sur le bouton OK'
+WebUI.click(findTestObject('Nouvelle demande/Type d appel/Popin err/bouton OK'), FailureHandling.CONTINUE_ON_FAILURE)
+
+'Telecharger le fichier avec un mauvais format imei'
+WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement imei csv'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\imeiRequisition mauvais imei.csv')
 
 'Vérifier l apparition du popin avec le message d erreur'
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur reverifier numero'), 
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur import mauvais imei'), 
     3)
 
 'Vérifier que le message d erreur est conforme'
-WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur reverifier numero'), 
-    'Revérifier le numéro 34000h0000')
+WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Popin err/Message d erreur import mauvais imei'), 
+    'Veuillez bien renseigner l\'imei : 1234567890123456')
 
 'Clique sur le bouton OK'
 WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Popin err/Bouton Ok'))
 
-'Telecharger le fichier avec les bons format msisdn'
-WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement msisdn csv'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\msisdnRequisition.csv')
+'Telecharger le fichier avec les bons format imei'
+WebUI.uploadFile(findTestObject('Nouvelle demande/Choix de l input/Champ de telechargement imei csv'), 'D:\\Utilisateurs\\samandari\\QA\\PROJET AUTOMATISATION\\E-REQUISITION\\JDD\\imeiRequisition.csv')
 
 'Vérifier que le numero s affiche avec un icon corbeille'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton de suppression numero A'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute A'), 3)
 
-'Vérifier que le numero affiché correspon au 1er numero dans le fichier'
-WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute A'), '034' + GlobalVariable.msisdnATraiterA)
+'Vérifier que l imei affiché correspond au 1er imei dans le fichier'
+WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute A'), GlobalVariable.imeiATraiterA)
 
 'Vérifier que le numero s affiche avec un icon corbeille'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton de suppression numero B'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute B'), 3)
 
-'Vérifier que le numero affiché correspon au 2e numero dans le fichier'
-WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute B'), '034' + GlobalVariable.msisdnATraiterB)
+'Vérifier que l\'imei affiché correspond au 2e imei dans le fichier'
+WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute B'), GlobalVariable.imeiATraiterB)
 
 'Vérifier que le numero s affiche avec un icon corbeille'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton de suppression numero C'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute C'), 3)
 
-'Vérifier que le numero affiché correspon au 3e numéro dans le fichier'
-WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute C'), '034' + GlobalVariable.msisdnATraiterC)
+'Vérifier que l imei affiché correspond au 3e imei dans le fichier'
+WebUI.verifyElementText(findTestObject('Nouvelle demande/Choix de l input/Numero ajoute C'), GlobalVariable.imeiATraiterC)
 
-'Cliquer sur le bouton corbeille du 3e numero'
+'Cliquer sur le bouton corbeille du 3e imei'
 WebUI.click(findTestObject('Nouvelle demande/Choix de l input/Bouton de suppression numero C'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'Vérifier que le 3e numero n est plus present'
+'Vérifier que le 3e imei n est plus present'
 WebUI.verifyElementNotPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton de suppression numero C'), 3)
 
 'Cliquer sur le bouton suivant '
@@ -302,7 +291,8 @@ WebUI.click(findTestObject('Nouvelle demande/Information Obligatoires/Popin err/
 int i = Math.random() * (5000 - 1)
 
 String nbrAleatoire = String.valueOf(i)
-GlobalVariable.referenceRequisition=nbrAleatoire
+
+GlobalVariable.referenceRequisition = nbrAleatoire
 
 'Saisir une reference de requisition'
 WebUI.sendKeys(findTestObject('Nouvelle demande/Information Obligatoires/Champ numero requisition'), GlobalVariable.referenceRequisition)
@@ -314,21 +304,26 @@ WebUI.uploadFile(findTestObject('Nouvelle demande/Information Obligatoires/Champ
 WebUI.click(findTestObject('Bouton commun/bouton suivant'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'La page d Options s\'affiche avec les éléments suivants:\r\n- Checbox Localisation (coché par défaut)\r\n- Checkbox Photo du titulaire (coché par défaut)\r\n- Checkbox Tac (coché par défaut)\r\n- Boutons Précédent, Lancer le traitement, Annuler'
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 
+    3)
 
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 
+    3)
 
 WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox tac'), 3)
 
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Bouton Lancer le traitement'), 3)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Bouton Lancer le traitement'), 
+    3)
 
 WebUI.verifyElementPresent(findTestObject('Bouton commun/bouton precedent'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Bouton commun/bouton annuler'), 3)
 
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Localisation'), 3)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Localisation'), 
+    3)
 
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Photo du titulaire'), 3)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Photo du titulaire'), 
+    3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label tac'), 3)
 
@@ -340,9 +335,11 @@ WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition a
 WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label tac'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'Vérifier que les checkbox sont décochés'
-WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 3)
+WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 
+    3)
 
-WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 3)
+WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 
+    3)
 
 'Cocher tous les checkbox'
 WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox tac'), 3)
@@ -354,9 +351,11 @@ WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition a
 WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label tac'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'Vérifier que tous les checkbox sont cochés'
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 
+    3)
 
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 
+    3)
 
 WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox tac'), 3)
 
@@ -366,7 +365,6 @@ WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition a
 'Vérifier qu on revient sur la Home page'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/encart historique d appels'), 10)
 
-'Vérifier que la requisition effectué vient d etre ajouter dans l historique de requisition'
-WebUI.callTestCase(findTestCase('02-Requisiton appel type voix/00-Called Tests Case/Verification ajout requisition appel sortant de type voix en fonction MSISDN(CT appel)'), 
+WebUI.callTestCase(findTestCase('03-Requisition appel type sms/00-Called Tests Case/Verification ajout requisition appel entrant de type sms en fonction IMEI(CT appel)'), 
     [:], FailureHandling.CONTINUE_ON_FAILURE)
 
