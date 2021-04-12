@@ -26,6 +26,9 @@ String dateFinRecherche = '02/04/2021'
 
 String profilRechercher = 'samandari'
 
+String dateDebutRecherche2='01/01/2021'
+
+String dateFinRecherche2='01/04/2025'
 'Se connecter a eRequisition'
 WebUI.callTestCase(findTestCase('00-Called Tests Case/Connexion a ERequisition'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
@@ -156,12 +159,12 @@ WebUI.click(findTestObject('Historique traitement appel/Liste deroulant profil')
 WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition identite client/Champ date fin'), Keys.chord(Keys.CONTROL, 
         'a'))
 
-WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition identite client/Champ date fin'), '01/04/2025')
+WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition identite client/Champ date fin'), dateFinRecherche2)
 
 WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition identite client/Champ date debut'), Keys.chord(Keys.CONTROL, 
         'a'))
 
-WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition identite client/Champ date debut'), '01/01/2021')
+WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition identite client/Champ date debut'), dateDebutRecherche2)
 
 WebUI.click(findTestObject('Historique traitement appel/Champ Rechercher'))
 
@@ -199,5 +202,40 @@ for (def utilisateur : colonneUtilisateur) {
     String nomUtilisateur = utilisateur.getText()
 
     WebUI.verifyMatch(nomUtilisateur, profilRechercher, false)
+}
+
+'Vérifier que la date est en bonne format'
+List<WebElement>dateHeure = WebUiCommonHelper.findWebElements(findTestObject('Historique traitement appel/Requisition identite client/Date et heure traitement'),
+	5)
+for (def date:dateHeure){
+	WebUI.verifyMatch(date.getText(), '^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4} (2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$', true)
+	String expectDate=(date.getText()).substring(0, 10)
+	boolean isDateMatch=isDateBetween2Date(dateDebutRecherche2,dateFinRecherche2,expectDate)
+	WebUI.verifyEqual(isDateMatch, true)
+}
+
+//Methode de verification si une date est comprise dans un interval (date de début et date de fin)
+
+boolean isDateBetween2Date(String dateBegin, String dateEnd, String expectedDate) {
+	int dateDebut = inverserFormatDate(dateBegin)
+
+	int dateFin = inverserFormatDate(dateEnd)
+
+	int dateAVerifier = inverserFormatDate(expectedDate)
+
+	return (dateDebut <= dateAVerifier) && (dateAVerifier <= dateFin)
+}
+//Methode d'inversion de du format de tate ex: 12/03/2021 to 20210312
+int inverserFormatDate(String date) {
+	String jour = date.substring(0, 2)
+
+	String mois = date.substring(3, 5)
+
+	String annee = date.substring(6)
+
+	String dateInverse = (annee + mois) + jour
+	int inverseDate
+		inverseDate = dateInverse.toInteger()
+		return inverseDate
 }
 

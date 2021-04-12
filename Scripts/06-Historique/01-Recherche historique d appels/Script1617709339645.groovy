@@ -24,6 +24,10 @@ String dateDebutRecherche = '12/03/2021'
 
 String dateFinRecherche = '12/03/2021'
 
+String dateDebutRecherche2 = '01/01/2021'
+
+String dateFinRecherche2 = '01/04/2025'
+
 String profilRechercher = 'sandy'
 
 'Se connecter a eRequisition'
@@ -159,17 +163,25 @@ WebUI.click(findTestObject('Historique traitement appel/Liste deroulant profil')
 WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition appel/Champ date fin'), Keys.chord(Keys.CONTROL, 
         'a'))
 
-WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition appel/Champ date fin'), '01/04/2025')
+WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition appel/Champ date fin'), dateFinRecherche2)
 
 WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition appel/Champ date debut'), Keys.chord(Keys.CONTROL, 
         'a'))
 
-WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition appel/Champ date debut'), '01/01/2021')
+WebUI.sendKeys(findTestObject('Historique traitement appel/Requisition appel/Champ date debut'), dateDebutRecherche2)
 
 WebUI.click(findTestObject('Historique traitement appel/Champ Rechercher'))
 
 'Cliquer sur le bouton Afficher'
 WebUI.click(findTestObject('Historique traitement appel/Bouton Afficher'))
+
+WebUI.click(findTestObject('Historique traitement appel/Requisition appel/Option Afficher les elements'))
+
+WebUI.waitForElementVisible(findTestObject('Historique traitement appel/Requisition appel/Option Afficher tous'), 3)
+
+WebUI.click(findTestObject('Historique traitement appel/Requisition appel/Option Afficher tous'))
+
+WebUI.click(findTestObject('Historique traitement appel/Requisition appel/Option Afficher les elements'))
 
 'Saisir un mot cle de la recherche'
 WebUI.sendKeys(findTestObject('Historique traitement appel/Champ Rechercher'), 'admin')
@@ -192,6 +204,24 @@ for (def utilisateur : colonneUtilisateur) {
     WebUI.verifyMatch(nomUtilisateur, 'admin', false)
 }
 
+//VERIFICATION DATE
+List<WebElement> colonneDateHeure = WebUiCommonHelper.findWebElements(findTestObject('Historique traitement appel/Requisition appel/Colonne date heure traitement'),
+	5)
+
+'Vérifier que les dates sont au bon format'
+for (def date: colonneDateHeure)
+{
+	WebUI.verifyMatch(date.getText(), '^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4} (2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$', true)
+}
+
+'Vérifier que les résultats correspondent à l interval de temps renseigné'
+for (def date : colonneDateHeure) {
+	String dateAVerifier = date.getText().substring(0, 10)
+
+	boolean isDateMatch = isDateBetween2Date(dateDebutRecherche2, dateFinRecherche2, dateAVerifier)
+
+	WebUI.verifyEqual(isDateMatch, true)
+}
 
 WebUI.clearText(findTestObject('Historique traitement appel/Champ Rechercher'))
 
@@ -205,5 +235,30 @@ for (def utilisateur : colonneUtilisateur) {
     String nomUtilisateur = utilisateur.getText()
 
     WebUI.verifyMatch(nomUtilisateur, profilRechercher, false)
+} 
+//Methode de verification si une date est comprise dans un interval (date de début et date de fin)
+
+boolean isDateBetween2Date(String dateBegin, String dateEnd, String expectedDate) {
+    int dateDebut = inverserFormatDate(dateBegin)
+
+    int dateFin = inverserFormatDate(dateEnd)
+
+    int dateAVerifier = inverserFormatDate(expectedDate)
+
+    return (dateDebut <= dateAVerifier) && (dateAVerifier <= dateFin)
+}
+
+//Methode d'inversion de du format de tate ex: 12/03/2021 to 20210312
+int inverserFormatDate(String date) {
+    String jour = date.substring(0, 2)
+
+    String mois = date.substring(3, 5)
+
+    String annee = date.substring(6)
+
+    String dateInverse = (annee + mois) + jour
+	int inverseDate
+		inverseDate = dateInverse.toInteger()
+		return inverseDate
 }
 
