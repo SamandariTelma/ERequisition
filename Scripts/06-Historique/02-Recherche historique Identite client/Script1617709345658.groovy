@@ -238,4 +238,3 @@ int inverserFormatDate(String date) {
 		inverseDate = dateInverse.toInteger()
 		return inverseDate
 }
-

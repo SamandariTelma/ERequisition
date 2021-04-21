@@ -203,4 +203,3 @@ WebUI.verifyElementText(findTestObject('Suivi acces utilisateur/Tableau de resul
 WebUI.verifyElementText(findTestObject('Suivi acces utilisateur/Tableau de resultat/Parametre 1ere ligne'), param2eLigne)
 
 WebUI.verifyElementNotPresent(findTestObject('Suivi acces utilisateur/Tableau de resultat/Login 2eme ligne'), 3)
-

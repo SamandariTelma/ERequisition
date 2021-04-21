@@ -45,6 +45,11 @@ WebUI.verifyElementVisible(findTestObject('Login/Champ password'))
 WebUI.click(findTestObject('Login/Bouton Connexion'))
 
 'Cliquer sur le bouton valider du popin'
+WebUI.waitForElementPresent(findTestObject('Login/Popin Regle de confidentialite/Bouton Valider'), 3)
+
+WebUI.delay(0.500)
+
+'Cliquer sur le bouton valider du popin'
 WebUI.click(findTestObject('Login/Popin Regle de confidentialite/Bouton Valider'))
 
 WebUI.waitForElementPresent(findTestObject('Nouvelle demande/Titre page Nouvelle demande'), 10)

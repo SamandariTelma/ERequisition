@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//label[contains(text(),'Appel entrants')]</value>
+         <value>//label[contains(text(),'Appels entrants')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

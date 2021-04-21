@@ -116,20 +116,10 @@ WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Sens d appel/Checkbo
 'Cliquer sur le bouton '
 WebUI.click(findTestObject('Bouton commun/bouton suivant'), FailureHandling.CONTINUE_ON_FAILURE)
 
-'(A enlever après la correction du bug)'
-WebUI.waitForElementPresent(findTestObject('Nouvelle demande/Type d appel/Popin err/bouton OK'), 3)
-
-WebUI.delay(0.500)
-
-'(A enlever après la correction du bug)'
-WebUI.click(findTestObject('Nouvelle demande/Type d appel/Popin err/bouton OK'), FailureHandling.CONTINUE_ON_FAILURE)
-
 'Vérifier la présence des éléments suivant:\r\n- Titre: CHOIX DE L\'INPUT\r\n- Bouton radio  MSISDN (Séléctionner par défaut)\r\n- Bouton radio IMEI\r\n- Bouton radio Saisir (Séléctionner par défaut)\r\n- Bouton radio Importer\r\n- Champ de saisie numéro avec un bouton +\r\n- boutons Précedent, Suivant, annuler'
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Titre Choix de l input'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton d ajout numero (icon plus)'), 3)
-
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton radio IMEI'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Choix de l input/Bouton radio Importer'), 3)
 
@@ -305,21 +295,26 @@ WebUI.uploadFile(findTestObject('Nouvelle demande/Information Obligatoires/Champ
 WebUI.click(findTestObject('Bouton commun/bouton suivant'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'La page d Options s\'affiche avec les éléments suivants:\r\n- Checbox Localisation (coché par défaut)\r\n- Checkbox Photo du titulaire (coché par défaut)\r\n- Checkbox Tac (coché par défaut)\r\n- Boutons Précédent, Lancer le traitement, Annuler'
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 
+    3)
 
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 
+    3)
 
 WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox tac'), 3)
 
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Bouton Lancer le traitement'), 3)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Bouton Lancer le traitement'), 
+    3)
 
 WebUI.verifyElementPresent(findTestObject('Bouton commun/bouton precedent'), 3)
 
 WebUI.verifyElementPresent(findTestObject('Bouton commun/bouton annuler'), 3)
 
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Localisation'), 3)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Localisation'), 
+    3)
 
-WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Photo du titulaire'), 3)
+WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label Photo du titulaire'), 
+    3)
 
 WebUI.verifyElementPresent(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label tac'), 3)
 
@@ -331,9 +326,11 @@ WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition a
 WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label tac'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'Vérifier que les checkbox sont décochés'
-WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 3)
+WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 
+    3)
 
-WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 3)
+WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 
+    3)
 
 'Cocher tous les checkbox'
 WebUI.verifyElementNotChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox tac'), 3)
@@ -345,9 +342,11 @@ WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition a
 WebUI.click(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Label tac'), FailureHandling.CONTINUE_ON_FAILURE)
 
 'Vérifier que tous les checkbox sont cochés'
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Localisation'), 
+    3)
 
-WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 3)
+WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox Photo du titulaire'), 
+    3)
 
 WebUI.verifyElementChecked(findTestObject('Nouvelle demande/Option d exploitation/Requisition appel/Checkbox tac'), 3)
 
