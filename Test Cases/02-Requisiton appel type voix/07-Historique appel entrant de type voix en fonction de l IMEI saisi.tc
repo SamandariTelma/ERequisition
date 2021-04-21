@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>07-Historique appel entrant de type voix en fonction de l IMEI saisi</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>78f2dcac-0cd0-4c47-a0d7-24d4a0b9b35b</testCaseGuid>
-</TestCaseEntity>

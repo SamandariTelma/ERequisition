@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>03-Historique appel sortant de type voix en fonction de l IMEI saisi (à enlever)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bb4a4287-5f2b-4669-8b8f-1131e6145fd7</testCaseGuid>
+</TestCaseEntity>
